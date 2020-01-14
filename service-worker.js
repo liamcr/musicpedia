@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/musipedia/precache-manifest.f39d39da4f8d7e8fd4efff63e97d7e7c.js"
+  "/musipedia/precache-manifest.9e968aef5a2561d432db5ce386236ec7.js"
 );
 
 self.addEventListener('message', (event) => {
