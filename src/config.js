@@ -9,5 +9,5 @@ export const config = {
     "user-read-private",
     "user-modify-playback-state"
   ],
-  homePageURL: "http://localhost:3000"
+  homePageURL: "https://liamcr.github.io/musipedia"
 };
