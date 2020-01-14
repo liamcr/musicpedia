@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/musipedia/static/css/main.d1b05096.chunk.css",
-    "main.js": "/musipedia/static/js/main.701b9206.chunk.js",
-    "main.js.map": "/musipedia/static/js/main.701b9206.chunk.js.map",
+    "main.js": "/musipedia/static/js/main.2f7e2af0.chunk.js",
+    "main.js.map": "/musipedia/static/js/main.2f7e2af0.chunk.js.map",
     "runtime-main.js": "/musipedia/static/js/runtime-main.8df0e77c.js",
     "runtime-main.js.map": "/musipedia/static/js/runtime-main.8df0e77c.js.map",
     "static/js/2.25b00c98.chunk.js": "/musipedia/static/js/2.25b00c98.chunk.js",
     "static/js/2.25b00c98.chunk.js.map": "/musipedia/static/js/2.25b00c98.chunk.js.map",
     "index.html": "/musipedia/index.html",
-    "precache-manifest.30a73796bd1ae0e16a01d3766463cb50.js": "/musipedia/precache-manifest.30a73796bd1ae0e16a01d3766463cb50.js",
+    "precache-manifest.a68599e8fbfa9fa28e4e6311233f13af.js": "/musipedia/precache-manifest.a68599e8fbfa9fa28e4e6311233f13af.js",
     "service-worker.js": "/musipedia/service-worker.js",
     "static/css/main.d1b05096.chunk.css.map": "/musipedia/static/css/main.d1b05096.chunk.css.map",
     "static/js/2.25b00c98.chunk.js.LICENSE": "/musipedia/static/js/2.25b00c98.chunk.js.LICENSE"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.8df0e77c.js",
     "static/js/2.25b00c98.chunk.js",
     "static/css/main.d1b05096.chunk.css",
-    "static/js/main.701b9206.chunk.js"
+    "static/js/main.2f7e2af0.chunk.js"
   ]
 }
