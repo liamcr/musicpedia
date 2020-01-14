@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0371c6c3f9b3c645d7517432ea5a5c60",
+    "revision": "7752be2043bfb0ef35f82eeda16be17c",
     "url": "/musipedia/index.html"
   },
   {
-    "revision": "f238ec146833eb88a301",
+    "revision": "9068b90d7e27de430fa2",
     "url": "/musipedia/static/css/main.d1b05096.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/musipedia/static/js/2.25b00c98.chunk.js.LICENSE"
   },
   {
-    "revision": "f238ec146833eb88a301",
-    "url": "/musipedia/static/js/main.579c8204.chunk.js"
+    "revision": "9068b90d7e27de430fa2",
+    "url": "/musipedia/static/js/main.f2ea2632.chunk.js"
   },
   {
     "revision": "b968ed3b33123d413336",
