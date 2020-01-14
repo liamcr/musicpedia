@@ -1,6 +1,6 @@
 export const config = {
-  clientID: "5fd8d51249914269912e36600fca948b",
-  redirectURI: "http://localhost:3000/home",
+  clientID: "37ee8313ef2e4b628637c5c8d2c9f070",
+  redirectURI: "https://liamcr.github.io/musipedia/home/",
   scopes: [
     "user-top-read",
     "user-library-read",
