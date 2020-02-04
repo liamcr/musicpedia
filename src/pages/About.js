@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Typography, Button, Box, makeStyles } from "@material-ui/core";
 import { config } from "../config";
+import SpotifyApiController from "../components/SpotifyApiController";
 
 const useStyles = makeStyles({
   container: {
@@ -18,13 +19,12 @@ export default function About() {
   return (
     <Card className={classes.container}>
       <Typography variant="h4" gutterBottom>
-        About Musipedia
+        About Musidex
       </Typography>
       <Typography variant="body1" gutterBottom>
-        Musipedia is a site that gives Spotify users access to any track,
-        artist, or album available in the Spotify library. Due to the use of
-        Spotify's web API, a valid Spotify account is required to use this
-        application.
+        Musidex is a site that gives Spotify users access to any track, artist,
+        or album available in the Spotify library. Due to the use of Spotify's
+        web API, a valid Spotify account is required to use this application.
       </Typography>
       <Box className={classes.section}>
         <Typography variant="h5" gutterBottom>
@@ -40,6 +40,7 @@ export default function About() {
         </Typography>
         <Button
           color="primary"
+          disabled={!SpotifyApiController.isLoggedIn()}
           href={`${config.homePageURL}/artist/6eUKZXaKkcviH0Ku9w2n3V`}
         >
           Artist Page
@@ -57,6 +58,7 @@ export default function About() {
         </Typography>
         <Button
           color="primary"
+          disabled={!SpotifyApiController.isLoggedIn()}
           href={`${config.homePageURL}/album/4LH4d3cOWNNsVw41Gqt2kv`}
         >
           Album Page
@@ -78,6 +80,7 @@ export default function About() {
         </Typography>
         <Button
           color="primary"
+          disabled={!SpotifyApiController.isLoggedIn()}
           href={`${config.homePageURL}/track/7oK9VyNzrYvRFo7nQEYkWN`}
         >
           Track Page

@@ -94,6 +94,8 @@ export default class SpotifyApiController extends React.Component {
    */
   static parseURLHash = () => {
     let hash = window.location.hash.substring(1);
+
+    console.log(hash);
     let jsonHash = `{"${hash.replace(/&/g, '","').replace(/=/g, '":"')}"}`;
 
     return hash ? JSON.parse(jsonHash) : {};

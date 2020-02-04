@@ -31,7 +31,7 @@ let useStyles = makeStyles(theme => ({
     marginLeft: "5%"
   },
   popover: {
-    maxWidth: "30%"
+    maxWidth: 320
   }
 }));
 

@@ -1,6 +1,10 @@
+const test = false;
+
 export const config = {
-  clientID: "37ee8313ef2e4b628637c5c8d2c9f070",
-  redirectURI: "https://liamcr.github.io/musipedia/home/",
+  clientID: "f2cf3c13ec1444678b9abce91a647d26",
+  redirectURI: test
+    ? "http://localhost:3000/home"
+    : "https://musidex.web.app/home",
   scopes: [
     "user-top-read",
     "user-library-read",
@@ -9,5 +13,5 @@ export const config = {
     "user-read-private",
     "user-modify-playback-state"
   ],
-  homePageURL: "https://liamcr.github.io/musipedia"
+  homePageURL: test ? "http://localhost:3000" : "https://musidex.web.app"
 };

@@ -38,7 +38,7 @@ export default function HomePage() {
       }
     }
 
-    return albumArr;
+    return albumArr.slice(0, 11);
   };
 
   const buildString = stringArr => {
@@ -102,7 +102,7 @@ export default function HomePage() {
         spacing={3}
         className={classes.recommendationGrid}
       >
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={6} md={4}>
           <PreviewList
             limit={10}
             homePage
@@ -111,7 +111,7 @@ export default function HomePage() {
             data={userTopTracks}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={6} md={4}>
           <PreviewList
             limit={10}
             homePage
@@ -120,7 +120,7 @@ export default function HomePage() {
             data={userRecommendedAlbums}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={6} md={4}>
           <PreviewList
             limit={10}
             homePage

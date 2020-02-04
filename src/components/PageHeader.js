@@ -7,7 +7,8 @@ import {
   Icon,
   Typography,
   CircularProgress,
-  Link
+  Link,
+  useMediaQuery
 } from "@material-ui/core";
 import { AccountCircle } from "@material-ui/icons";
 import { config } from "../config";
@@ -19,6 +20,10 @@ const useStyles = makeStyles({
   image: {
     height: "30vh",
     width: "30vh"
+  },
+  imageSmaller: {
+    height: "20vh",
+    width: "20vh"
   },
   infoContainer: {
     margin: "auto 20px",
@@ -32,6 +37,7 @@ const useStyles = makeStyles({
 
 export default function PageHeader(props) {
   const classes = useStyles();
+  const matches = useMediaQuery("(min-width:600px)");
 
   if (props.name === null) {
     return (
@@ -44,7 +50,7 @@ export default function PageHeader(props) {
       <Card className={classes.card}>
         {props.images.length !== 0 ? (
           <CardMedia
-            className={classes.image}
+            className={!matches ? classes.imageSmaller : classes.image}
             image={props.images[0].url}
             title={props.subtitle || props.trackAlbum ? "Album Art" : "Artist"}
           />
@@ -54,12 +60,16 @@ export default function PageHeader(props) {
           </Icon>
         )}
         <Box className={classes.infoContainer}>
-          <Typography noWrap variant="h1">
+          <Typography noWrap variant={!matches ? "h3" : "h1"}>
             {props.name}
           </Typography>
           <Box>
             {props.trackAlbum && (
-              <Typography noWrap variant="h4" color="textSecondary">
+              <Typography
+                noWrap
+                variant={!matches ? "h5" : "h4"}
+                color="textSecondary"
+              >
                 <Link
                   color="inherit"
                   href={`${config.homePageURL}/album/${props.trackAlbum.id}`}
@@ -75,7 +85,7 @@ export default function PageHeader(props) {
                 <Typography
                   key={index}
                   noWrap
-                  variant="h4"
+                  variant={!matches ? "h5" : "h4"}
                   className={classes.artistName}
                   color="textSecondary"
                 >
@@ -88,7 +98,7 @@ export default function PageHeader(props) {
                 </Typography>
               ))}
           </Box>
-          <Typography variant="h5" color="textSecondary">
+          <Typography variant={!matches ? "h6" : "h5"} color="textSecondary">
             {props.subtitle}
           </Typography>
         </Box>

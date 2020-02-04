@@ -13,7 +13,8 @@ import {
   Grid,
   Button,
   Icon,
-  Tooltip
+  Tooltip,
+  useMediaQuery
 } from "@material-ui/core";
 import { AccountCircle, ExpandMore } from "@material-ui/icons";
 import { config } from "../config";
@@ -70,6 +71,8 @@ export default function DataPreview(props) {
   let data;
   const classes = useStyles();
   const [expanded, setExpanded] = useState(false);
+
+  const matches = useMediaQuery("(min-width:600px)");
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -137,7 +140,12 @@ export default function DataPreview(props) {
       dataImageUrl:
         props.data.images.length > 0 ? props.data.images[0].url : null,
       collapsedData: {
-        Followers: props.data.followers.total.toLocaleString(),
+        Followers:
+          !matches && props.data.followers.total >= 1e6
+            ? `${Math.round(props.data.followers.total / 1e6)}.${Math.round(
+                props.data.followers.total / 1e4
+              ) % 1e2} M`
+            : props.data.followers.total.toLocaleString(),
         Popularity: props.data.popularity
       }
     };

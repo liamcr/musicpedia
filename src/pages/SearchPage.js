@@ -91,7 +91,7 @@ export default function GetStarted() {
         spacing={3}
         className={classes.recommendationGrid}
       >
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={6} md={4}>
           <PreviewList
             limit={10}
             title="Tracks"
@@ -99,7 +99,7 @@ export default function GetStarted() {
             data={searchResult === null ? null : searchResult.tracks.items}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={6} md={4}>
           <PreviewList
             limit={10}
             title="Albums"
@@ -107,7 +107,7 @@ export default function GetStarted() {
             data={albumsResult}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={6} md={4}>
           <PreviewList
             limit={10}
             title="Artists"

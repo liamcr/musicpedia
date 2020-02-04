@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom";
+import { Route, Redirect, Switch, BrowserRouter } from "react-router-dom";
 import GetStarted from "./pages/GetStarted";
 import PageNotFound from "./pages/PageNotFound";
 import HomePage from "./pages/HomePage";
@@ -18,12 +18,14 @@ import {
   Toolbar,
   Typography,
   makeStyles,
-  Tooltip
+  Tooltip,
+  useMediaQuery
 } from "@material-ui/core";
 import { Brightness4, Brightness7, ExitToApp, Info } from "@material-ui/icons";
 import "./App.css";
 import SearchBar from "./components/SearchBar";
 import { config } from "./config";
+import SpotifyApiController from "./components/SpotifyApiController";
 
 const useStyles = makeStyles({
   titleBox: {
@@ -47,21 +49,14 @@ function showSearchBar() {
     pathname = `/${parsedPath[1]}`;
   }
 
-  return !["/", "/page-not-found", "/home", "/search"].includes(pathname);
+  return !["/", "/page-not-found", "/home", "/search", "/about"].includes(
+    pathname
+  );
 }
 
 // Determines whether or not the logout button should appear within the app bar
 function showLogout() {
-  let parsedPath = window.location.pathname.split("/");
-  let pathname;
-
-  if (parsedPath.length === 0) {
-    pathname = "/";
-  } else {
-    pathname = `/${parsedPath[1]}`;
-  }
-
-  return !["/", "/page-not-found"].includes(pathname);
+  return SpotifyApiController.isLoggedIn();
 }
 
 function App() {
@@ -71,13 +66,14 @@ function App() {
       ? localStorage.getItem("musicInfoTheme")
       : "light"
   );
+  const matches = useMediaQuery("(min-width:800px)");
 
   // Theme and Palette configuration
   const theme = createMuiTheme({
     palette: {
       type: themeSetting,
       primary: {
-        main: "#C71585"
+        main: "#c45ec3"
       }
     }
   });
@@ -97,19 +93,16 @@ function App() {
               variant="h4"
               className={classes.titleText}
               onClick={() => {
-                if (
-                  window.location.pathname !== "/" &&
-                  window.location.pathname !== "/page-not-found"
-                ) {
+                if (SpotifyApiController.isLoggedIn()) {
                   window.location.href = `${config.homePageURL}/home`;
                 } else {
                   window.location.href = config.homePageURL;
                 }
               }}
             >
-              Musipedia
+              Musidex
             </Typography>
-            {showSearchBar() && <SearchBar />}
+            {showSearchBar() && matches && <SearchBar />}
           </Box>
           <Tooltip title="About">
             <IconButton
@@ -158,7 +151,7 @@ function App() {
         </Toolbar>
       </AppBar>
 
-      <BrowserRouter>
+      <BrowserRouter basename="/">
         <Switch>
           <Route exact path="/">
             <GetStarted />

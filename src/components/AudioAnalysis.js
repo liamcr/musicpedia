@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2)
   },
   popover: {
-    maxWidth: "30%"
+    maxWidth: 320
   }
 }));
 
