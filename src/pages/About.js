@@ -19,12 +19,13 @@ export default function About() {
   return (
     <Card className={classes.container}>
       <Typography variant="h4" gutterBottom>
-        About Musidex
+        About Musicpedia
       </Typography>
       <Typography variant="body1" gutterBottom>
-        Musidex is a site that gives Spotify users access to any track, artist,
-        or album available in the Spotify library. Due to the use of Spotify's
-        web API, a valid Spotify account is required to use this application.
+        Musicpedia is a site that gives Spotify users access to any track,
+        artist, or album available in the Spotify library. Due to the use of
+        Spotify's web API, a valid Spotify account is required to use this
+        application.
       </Typography>
       <Box className={classes.section}>
         <Typography variant="h5" gutterBottom>

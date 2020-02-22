@@ -100,7 +100,7 @@ function App() {
                 }
               }}
             >
-              Musidex
+              Musicpedia
             </Typography>
             {showSearchBar() && matches && <SearchBar />}
           </Box>
