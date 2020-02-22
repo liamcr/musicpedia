@@ -1,4 +1,4 @@
-# Musidex
-The source code to my project Musidex.
+# Musicpedia
+The source code to my project Musicpedia.
 
 Check out the site here: https://musidex.web.app/
